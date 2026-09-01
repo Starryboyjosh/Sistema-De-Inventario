@@ -12,6 +12,7 @@
             </div>
         </div>
 
+        <div class="overflow-x-auto">
         <table class="w-full text-sm">
             <thead>
                 <tr class="text-left border-b">
@@ -36,5 +37,6 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection

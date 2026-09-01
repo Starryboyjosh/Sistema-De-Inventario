@@ -20,6 +20,7 @@
 
         <div>
             <h4 class="font-semibold text-sm mb-2">Stock por area</h4>
+            <div class="overflow-x-auto">
             <table class="w-full text-sm">
                 <thead>
                     <tr class="text-left border-b">
@@ -42,6 +43,7 @@
                     @endforelse
                 </tbody>
             </table>
+            </div>
         </div>
 
         <a href="{{ route('items.index') }}" class="text-sm text-blue-600">Volver</a>

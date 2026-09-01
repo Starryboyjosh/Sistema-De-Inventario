@@ -17,6 +17,7 @@
             <button class="text-sm bg-gray-200 px-3 py-1 rounded">Filtrar</button>
         </form>
 
+        <div class="overflow-x-auto">
         <table class="w-full text-sm">
             <thead>
                 <tr class="text-left border-b">
@@ -39,6 +40,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         <div class="mt-4">{{ $movimientos->links() }}</div>
     </div>

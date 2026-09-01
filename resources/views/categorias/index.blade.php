@@ -12,6 +12,7 @@
             <a href="{{ route('categorias.create') }}" class="bg-gray-800 text-white px-3 py-1 rounded text-sm">Nueva categoria</a>
         </div>
 
+        <div class="overflow-x-auto">
         <table class="w-full text-sm">
             <thead>
                 <tr class="text-left border-b">
@@ -35,6 +36,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         <div class="mt-4">{{ $categorias->links() }}</div>
     </div>

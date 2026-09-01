@@ -12,6 +12,7 @@
             <a href="{{ route('proveedores.create') }}" class="bg-gray-800 text-white px-3 py-1 rounded text-sm">Nuevo proveedor</a>
         </div>
 
+        <div class="overflow-x-auto">
         <table class="w-full text-sm">
             <thead>
                 <tr class="text-left border-b">
@@ -39,6 +40,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         <div class="mt-4">{{ $proveedores->links() }}</div>
     </div>
