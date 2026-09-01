@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MovimientoInventarioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\UnidadMedidaController;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -44,6 +44,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/ajuste', [MovimientoInventarioController::class, 'ajuste'])->name('ajuste');
         Route::post('/ajuste', [MovimientoInventarioController::class, 'guardarAjuste'])->name('ajuste.store');
         Route::get('/stock-por-area/{area}', [MovimientoInventarioController::class, 'stockPorArea'])->name('stock-por-area');
+    });
+
+    Route::prefix('reportes')->name('reportes.')->middleware('permission:reportes.ver')->group(function () {
+        Route::get('/inventario', [ReporteController::class, 'inventario'])->name('inventario');
+        Route::get('/inventario/exportar-excel', [ReporteController::class, 'exportarInventarioExcel'])->name('inventario.excel');
+        Route::get('/inventario/exportar-pdf', [ReporteController::class, 'exportarInventarioPdf'])->name('inventario.pdf');
+        Route::get('/movimientos', [ReporteController::class, 'movimientos'])->name('movimientos');
     });
 });
 
