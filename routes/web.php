@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SucursalController;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('categorias', CategoriaController::class)->except('show')->middleware('permission:categorias.ver');
     Route::resource('unidades-medida', UnidadMedidaController::class)->except('show')->middleware('permission:unidades_medida.ver');
     Route::resource('proveedores', ProveedorController::class)->except('show')->middleware('permission:proveedores.ver');
+    Route::resource('items', ItemController::class);
 });
 
 require __DIR__.'/auth.php';
