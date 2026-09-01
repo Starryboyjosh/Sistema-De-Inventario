@@ -10,7 +10,7 @@ class RolesAndPermissionsSeeder extends Seeder
 {
     public function run(): void
     {
-        $modulos = ['empresas', 'sucursales', 'areas', 'items', 'movimientos', 'reportes'];
+        $modulos = ['empresas', 'sucursales', 'areas', 'categorias', 'unidades_medida', 'proveedores', 'items', 'movimientos', 'reportes'];
         $acciones = ['ver', 'crear', 'editar', 'eliminar'];
 
         foreach ($modulos as $modulo) {

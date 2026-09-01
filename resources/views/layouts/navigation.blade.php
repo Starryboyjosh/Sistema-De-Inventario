@@ -13,6 +13,15 @@
                 @can('areas.ver')
                     <a href="{{ route('areas.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Areas</a>
                 @endcan
+                @can('categorias.ver')
+                    <a href="{{ route('categorias.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Categorias</a>
+                @endcan
+                @can('unidades_medida.ver')
+                    <a href="{{ route('unidades-medida.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Unidades</a>
+                @endcan
+                @can('proveedores.ver')
+                    <a href="{{ route('proveedores.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Proveedores</a>
+                @endcan
                 @can('items.ver')
                     <a href="{{ route('items.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Items</a>
                 @endcan
